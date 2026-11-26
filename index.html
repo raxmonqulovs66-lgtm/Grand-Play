@@ -1,54 +1,25 @@
 <!doctype html>
-<html lang="uz">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#090909">
-<title>GRAND PLAY</title>
-<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#090909"><title>GRAND PLAY — Shashka</title><script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
-:root{--bg:#090909;--panel:#151515;--gold:#d7ad52;--muted:#aaa;--line:#332a18}
-*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#211a0d 0,#090909 48%);color:#f7f2e8;font:15px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
-.wrap{max-width:520px;margin:auto;padding:22px 16px 40px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}
-.brand{font-weight:900;letter-spacing:2px;font-size:23px;color:var(--gold)}.tag{font-size:11px;color:#b9a77d;border:1px solid var(--line);padding:6px 9px;border-radius:20px}
-.hero{border:1px solid #4a391b;border-radius:22px;padding:22px;background:linear-gradient(135deg,#20190d,#111 65%);box-shadow:0 14px 40px #0008}
-.kicker{color:var(--gold);font-size:11px;letter-spacing:2px;font-weight:700}.hero h1{font-size:28px;line-height:1.1;margin:9px 0}.hero p{color:#c4bdaF;margin:0;line-height:1.5}
-.profile{display:flex;align-items:center;gap:12px;margin:20px 2px}.avatar{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#2a2111;border:1px solid #6b5122;color:var(--gold);font-size:20px}
-.profile small{display:block;color:var(--muted);margin-top:2px}.section{margin:25px 0 12px;display:flex;justify-content:space-between;align-items:center}.section h2{font-size:17px;margin:0}.section span{color:var(--gold);font-size:12px}
-.games{display:grid;grid-template-columns:1fr 1fr;gap:12px}.game{background:linear-gradient(145deg,#1b1b1b,#101010);border:1px solid #30291d;border-radius:17px;padding:16px;min-height:135px;text-align:left;color:white}
-.game .emoji{font-size:30px}.game b{display:block;margin-top:12px;font-size:16px}.game small{color:#aaa}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:13px}.action{border:1px solid #3a301e;background:#15130f;color:#e8d6ad;padding:13px;border-radius:13px;font-weight:650}
-.wide{width:100%;border:0;border-radius:13px;padding:14px;background:linear-gradient(90deg,#b98a32,#e2c16d);color:#17120a;font-weight:800;font-size:15px;margin-top:15px}
-.note{font-size:11px;color:#8e887c;text-align:center;margin-top:22px;line-height:1.5}
-.screen{display:none}.screen.active{display:block}.back{background:none;border:0;color:var(--gold);padding:8px 0;font-size:14px}
-.card{background:var(--panel);border:1px solid #30291d;border-radius:16px;padding:16px;margin:12px 0}.muted{color:var(--muted)}.board{display:grid;grid-template-columns:repeat(8,1fr);aspect-ratio:1;border:3px solid #6e5425;border-radius:8px;overflow:hidden;margin:18px 0}
-.cell{display:grid;place-items:center;font-size:clamp(19px,6vw,30px);background:#d8c39b;color:#17120a}.cell.dark{background:#76552d;color:#f8e9c8}
-button{cursor:pointer}
-</style></head>
-<body><main class="wrap">
-<div class="top"><div class="brand">♛ GRAND PLAY</div><div class="tag">BETA • DEMO</div></div>
-<section id="home" class="screen active">
-<div class="hero"><div class="kicker">STRATEGIYA • RAQOBAT • AQL</div><h1>O‘yiningni boshlash vaqti.</h1><p>Do‘stlaring bilan bellash yoki yangi raqib top. Barcha o‘yinlar bir joyda.</p></div>
-<div class="profile"><div class="avatar">♙</div><div><b id="playerName">Mehmon o‘yinchi</b><small>Profil sozlamalari keyingi bosqichda</small></div></div>
-<div class="section"><h2>O‘yinlar</h2><span>3 TA O‘YIN</span></div>
-<div class="games">
-<button class="game" onclick="openGame('Shaxmat','♟')"><span class="emoji">♟</span><b>Shaxmat</b><small>Mantiq va strategiya</small></button>
-<button class="game" onclick="openGame('Shashka','⚫')"><span class="emoji">⚫</span><b>Shashka</b><small>Reja tuz va yut</small></button>
-<button class="game" onclick="openGame('Durak','🂡')"><span class="emoji">🂡</span><b>Durak</b><small>Karta o‘yini</small></button>
-<button class="game" onclick="openGame('Do‘st bilan o‘yin','🤝')"><span class="emoji">🤝</span><b>Do‘st bilan</b><small>Taklif havolasi — keyingi bosqich</small></button>
-</div>
-<div class="section"><h2>Platforma</h2><span>GRAND CLUB</span></div>
-<div class="actions"><button class="action" onclick="showInfo('Premium','Premium obuna hozircha demo rejimida. To‘lov integratsiyasi keyingi bosqichda ulanadi.')">👑 Premium</button><button class="action" onclick="showInfo('Reyting','Reyting va o‘yin statistikasi server ulangandan keyin ishlaydi.')">🏆 Reyting</button><button class="action" onclick="showInfo('Profil','Telegram profilingizni avtomatik olish va taxallus tanlash keyingi bosqichda ulanadi.')">👤 Profil</button><button class="action" onclick="showInfo('Yordam','Yordam bo‘limi tez orada qo‘shiladi.')">❔ Yordam</button></div>
-<div class="note">Bu — dastlabki interfeys maketi. Hozircha haqiqiy o‘yin, raqib qidirish, obuna va to‘lovlar ulanmagan.</div>
-</section>
-<section id="game" class="screen">
-<button class="back" onclick="goHome()">← Bosh sahifa</button><div class="hero"><div class="kicker">GRAND PLAY ARENA</div><h1 id="gameTitle">Shaxmat</h1><p id="gameDesc">O‘yin rejimini tanlang.</p></div>
-<div class="card"><b>O‘yin rejimi</b><button class="wide" onclick="showInfo('Tasodifiy raqib','Jonli raqib qidirish server va matchmaking ulangach ishlaydi.')">Tasodifiy raqib</button><button class="action" style="width:100%;margin-top:10px" onclick="showInfo('Do‘stni taklif qilish','Taklif havolasi multiplayer server ulangach yaratiladi.')">Do‘stni taklif qilish</button><button class="action" style="width:100%;margin-top:10px" onclick="showInfo('Kompyuterga qarshi','Kompyuter raqibi va yurish qoidalari keyingi dasturlash bosqichida qo‘shiladi.')">Kompyuterga qarshi</button></div>
-</section>
-</main>
+:root{--gold:#d7ad52;--muted:#aaa;--light:#e6d2a8;--dark:#76552d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#211a0d 0,#090909 55%);color:#f7f2e8;font:15px system-ui,sans-serif;min-height:100vh}.wrap{max-width:520px;margin:auto;padding:18px 14px 32px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.brand{font-weight:900;letter-spacing:2px;font-size:22px;color:var(--gold)}.tag{font-size:10px;color:#b9a77d;border:1px solid #44371e;padding:6px 9px;border-radius:20px}.hero{border:1px solid #4a391b;border-radius:20px;padding:17px;background:linear-gradient(135deg,#20190d,#111 65%);margin-bottom:14px}.kicker{color:var(--gold);font-size:10px;letter-spacing:2px;font-weight:800}.hero h1{font-size:25px;margin:6px 0}.hero p{color:#c4bdaf;margin:0;font-size:13px;line-height:1.45}.panel{background:#151515;border:1px solid #30291d;border-radius:16px;padding:13px;margin:12px 0}.turn{display:flex;justify-content:space-between;align-items:center;gap:8px}.turn strong{color:var(--gold)}.status{color:#c9c0ad;font-size:13px;margin-top:7px;min-height:20px}.board{width:min(100%,470px);margin:14px auto;display:grid;grid-template-columns:repeat(8,1fr);aspect-ratio:1;border:4px solid #6e5425;border-radius:9px;overflow:hidden;box-shadow:0 10px 28px #0009}.square{border:0;padding:0;display:grid;place-items:center;position:relative;min-width:0;min-height:0}.light{background:var(--light)}.dark{background:var(--dark)}.square.selected{outline:3px solid #f4d37b;outline-offset:-4px}.square.target:after{content:"";width:27%;height:27%;border-radius:50%;background:#e5bd5e;box-shadow:0 0 0 3px #3b2a0e88}.piece{width:76%;height:76%;border-radius:50%;display:grid;place-items:center;border:3px solid #d5b86f;box-shadow:inset 0 3px 5px #fff5,0 3px 5px #0008;font-size:clamp(16px,5vw,25px);font-weight:900}.white{background:radial-gradient(circle at 30% 25%,#fff,#c8c3b7 65%,#777)}.black{background:radial-gradient(circle at 30% 25%,#777,#252525 65%,#050505);border-color:#b48b3c;color:#e8c36e}.king:after{content:"♛";color:#d5ae54;text-shadow:0 1px 2px #000;font-size:clamp(15px,4.5vw,23px)}.controls{display:grid;grid-template-columns:1fr 1fr;gap:9px}.btn{border:1px solid #4a391b;background:#19150e;color:#ead8ad;padding:12px;border-radius:12px;font-weight:700}.primary{background:linear-gradient(90deg,#b98a32,#e2c16d);color:#17120a;border:0}.rules{color:#aaa;font-size:12px;line-height:1.55}.rules b{color:#e4c16c}.foot{text-align:center;color:#777;font-size:10px;margin-top:15px}
+</style></head><body><main class="wrap"><header class="top"><div class="brand">♛ GRAND PLAY</div><div class="tag">SHASHKA • BETA</div></header>
+<section class="hero"><div class="kicker">GRAND PLAY ARENA</div><h1>Shashka</h1><p>Ikki kishi bitta telefonda navbat bilan o‘ynaydi. Oq donalar birinchi yuradi.</p></section>
+<section class="panel"><div class="turn"><div>Navbat: <strong id="turnName">Oq</strong></div><div id="score">Oq: 12 · Qora: 12</div></div><div class="status" id="status">Oq donadan birini tanlang.</div></section>
+<div class="board" id="board" aria-label="Shashka taxtasi"></div>
+<section class="panel controls"><button class="btn primary" id="newGame">Yangi o‘yin</button><button class="btn" id="undo">Yurishni bekor qilish</button></section>
+<section class="panel rules"><b>Qoidalar:</b> dona diagonal bo‘ylab oldinga yuradi. Raqib donasini sakrab urish mumkin; urish majburiy. Oxirgi qatorga yetgan dona malika bo‘ladi. Bu dastlabki mahalliy ikki o‘yinchili versiya — internet orqali raqib topish keyingi bosqichda ulanadi.</section><div class="foot">GRAND PLAY © 2026</div></main>
 <script>
-const tg=window.Telegram?.WebApp;
-if(tg){tg.ready();tg.expand();try{const u=tg.initDataUnsafe?.user;if(u){document.getElementById('playerName').textContent=u.first_name||'O‘yinchi'}}catch(e){}}
-function openGame(name,icon){document.getElementById('gameTitle').textContent=icon+' '+name;document.getElementById('gameDesc').textContent=name+' uchun o‘yin rejimini tanlang.';document.getElementById('home').classList.remove('active');document.getElementById('game').classList.add('active')}
-function goHome(){document.getElementById('game').classList.remove('active');document.getElementById('home').classList.add('active')}
-function showInfo(title,msg){if(tg?.showPopup){tg.showPopup({title,message:msg,buttons:[{type:'ok'}]})}else{alert(title+'\\n\\n'+msg)}}
+const tg=window.Telegram?.WebApp;if(tg){tg.ready();tg.expand()}
+const boardEl=document.getElementById('board'),statusEl=document.getElementById('status'),turnName=document.getElementById('turnName'),scoreEl=document.getElementById('score');let board=[],turn='w',selected=null,targets=[],history=[],gameOver=false;
+const copyState=()=>({board:board.map(r=>r.map(p=>p?{...p}:null)),turn,gameOver});
+function restore(s){board=s.board.map(r=>r.map(p=>p?{...p}:null));turn=s.turn;gameOver=s.gameOver;selected=null;targets=[];render();statusEl.textContent='Oldingi holat tiklandi.'}
+function init(){board=Array.from({length:8},()=>Array(8).fill(null));for(let r=0;r<3;r++)for(let c=0;c<8;c++)if((r+c)%2===1)board[r][c]={side:'b',king:false};for(let r=5;r<8;r++)for(let c=0;c<8;c++)if((r+c)%2===1)board[r][c]={side:'w',king:false};turn='w';selected=null;targets=[];history=[];gameOver=false;statusEl.textContent='Oq donadan birini tanlang.';render()}
+function inside(r,c){return r>=0&&r<8&&c>=0&&c<8}function dirs(p){if(p.king)return[[-1,-1],[-1,1],[1,-1],[1,1]];return p.side==='w'?[[-1,-1],[-1,1]]:[[1,-1],[1,1]]}
+function capturesFor(r,c){const p=board[r][c],out=[];if(!p)return out;for(const[dr,dc]of dirs(p)){const mr=r+dr,mc=c+dc,lr=r+2*dr,lc=c+2*dc;if(inside(lr,lc)&&board[mr]?.[mc]&&board[mr][mc].side!==p.side&&!board[lr][lc])out.push({r:lr,c:lc,capture:{r:mr,c:mc}})}return out}
+function movesFor(r,c){const p=board[r][c];if(!p)return[];const caps=capturesFor(r,c);if(caps.length)return caps;let out=[];for(const[dr,dc]of dirs(p)){const nr=r+dr,nc=c+dc;if(inside(nr,nc)&&!board[nr][nc])out.push({r:nr,c:nc})}return out}
+function allCaptures(side){let a=[];for(let r=0;r<8;r++)for(let c=0;c<8;c++)if(board[r][c]?.side===side&&capturesFor(r,c).length)a.push({r,c});return a}
+function render(){boardEl.innerHTML='';let counts={w:0,b:0};for(let r=0;r<8;r++)for(let c=0;c<8;c++){const sq=document.createElement('button');sq.className='square '+(((r+c)%2)?'dark':'light');if(selected&&selected.r===r&&selected.c===c)sq.classList.add('selected');if(targets.some(t=>t.r===r&&t.c===c))sq.classList.add('target');const p=board[r][c];if(p){counts[p.side]++;const el=document.createElement('span');el.className='piece '+(p.side==='w'?'white':'black')+(p.king?' king':'');sq.appendChild(el)}sq.addEventListener('click',()=>tap(r,c));boardEl.appendChild(sq)}turnName.textContent=turn==='w'?'Oq':'Qora';scoreEl.textContent=`Oq: ${counts.w} · Qora: ${counts.b}`}
+function tap(r,c){if(gameOver)return;const p=board[r][c];if(selected){const move=targets.find(t=>t.r===r&&t.c===c);if(move){doMove(selected.r,selected.c,move);return}}if(p&&p.side===turn){const forced=allCaptures(turn);if(forced.length&&!forced.some(x=>x.r===r&&x.c===c)){statusEl.textContent='Avval urish imkoniyati bor donani tanlang.';return}selected={r,c};targets=movesFor(r,c);statusEl.textContent=targets.length?'Borish mumkin bo‘lgan katakni tanlang.':'Bu dona yura olmaydi.';render()}else{selected=null;targets=[];render()}}
+function doMove(r,c,m){history.push(copyState());const p=board[r][c];board[m.r][m.c]=p;board[r][c]=null;if(m.capture)board[m.capture.r][m.capture.c]=null;if((p.side==='w'&&m.r===0)||(p.side==='b'&&m.r===7))p.king=true;selected=null;targets=[];if(m.capture&&capturesFor(m.r,m.c).length){selected={r:m.r,c:m.c};targets=capturesFor(m.r,m.c);statusEl.textContent='Yana urish mumkin — shu dona bilan davom eting.';render();return}turn=turn==='w'?'b':'w';const pieces=board.flat().filter(x=>x&&x.side===turn).length;const canMove=board.some((row,rr)=>row.some((x,cc)=>x&&x.side===turn&&movesFor(rr,cc).length));render();if(!pieces||!canMove){gameOver=true;statusEl.textContent=(turn==='w'?'Qora':'Oq')+' g‘alaba qozondi! Yangi o‘yin boshlashingiz mumkin.';turnName.textContent='O‘yin tugadi'}else statusEl.textContent=(turn==='w'?'Oq':'Qora')+' navbati.'}
+document.getElementById('newGame').addEventListener('click',init);document.getElementById('undo').addEventListener('click',()=>{if(history.length)restore(history.pop());else statusEl.textContent='Bekor qilinadigan yurish yo‘q.'});init();
 </script></body></html>
