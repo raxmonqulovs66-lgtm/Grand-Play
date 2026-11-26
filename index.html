@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#090909">
+<title>GRAND PLAY</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+:root{--bg:#090909;--panel:#151515;--gold:#d7ad52;--muted:#aaa;--line:#332a18}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#211a0d 0,#090909 48%);color:#f7f2e8;font:15px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+.wrap{max-width:520px;margin:auto;padding:22px 16px 40px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}
+.brand{font-weight:900;letter-spacing:2px;font-size:23px;color:var(--gold)}.tag{font-size:11px;color:#b9a77d;border:1px solid var(--line);padding:6px 9px;border-radius:20px}
+.hero{border:1px solid #4a391b;border-radius:22px;padding:22px;background:linear-gradient(135deg,#20190d,#111 65%);box-shadow:0 14px 40px #0008}
+.kicker{color:var(--gold);font-size:11px;letter-spacing:2px;font-weight:700}.hero h1{font-size:28px;line-height:1.1;margin:9px 0}.hero p{color:#c4bdaF;margin:0;line-height:1.5}
+.profile{display:flex;align-items:center;gap:12px;margin:20px 2px}.avatar{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#2a2111;border:1px solid #6b5122;color:var(--gold);font-size:20px}
+.profile small{display:block;color:var(--muted);margin-top:2px}.section{margin:25px 0 12px;display:flex;justify-content:space-between;align-items:center}.section h2{font-size:17px;margin:0}.section span{color:var(--gold);font-size:12px}
+.games{display:grid;grid-template-columns:1fr 1fr;gap:12px}.game{background:linear-gradient(145deg,#1b1b1b,#101010);border:1px solid #30291d;border-radius:17px;padding:16px;min-height:135px;text-align:left;color:white}
+.game .emoji{font-size:30px}.game b{display:block;margin-top:12px;font-size:16px}.game small{color:#aaa}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:13px}.action{border:1px solid #3a301e;background:#15130f;color:#e8d6ad;padding:13px;border-radius:13px;font-weight:650}
+.wide{width:100%;border:0;border-radius:13px;padding:14px;background:linear-gradient(90deg,#b98a32,#e2c16d);color:#17120a;font-weight:800;font-size:15px;margin-top:15px}
+.note{font-size:11px;color:#8e887c;text-align:center;margin-top:22px;line-height:1.5}
+.screen{display:none}.screen.active{display:block}.back{background:none;border:0;color:var(--gold);padding:8px 0;font-size:14px}
+.card{background:var(--panel);border:1px solid #30291d;border-radius:16px;padding:16px;margin:12px 0}.muted{color:var(--muted)}.board{display:grid;grid-template-columns:repeat(8,1fr);aspect-ratio:1;border:3px solid #6e5425;border-radius:8px;overflow:hidden;margin:18px 0}
+.cell{display:grid;place-items:center;font-size:clamp(19px,6vw,30px);background:#d8c39b;color:#17120a}.cell.dark{background:#76552d;color:#f8e9c8}
+button{cursor:pointer}
+</style></head>
+<body><main class="wrap">
+<div class="top"><div class="brand">♛ GRAND PLAY</div><div class="tag">BETA • DEMO</div></div>
+<section id="home" class="screen active">
+<div class="hero"><div class="kicker">STRATEGIYA • RAQOBAT • AQL</div><h1>O‘yiningni boshlash vaqti.</h1><p>Do‘stlaring bilan bellash yoki yangi raqib top. Barcha o‘yinlar bir joyda.</p></div>
+<div class="profile"><div class="avatar">♙</div><div><b id="playerName">Mehmon o‘yinchi</b><small>Profil sozlamalari keyingi bosqichda</small></div></div>
+<div class="section"><h2>O‘yinlar</h2><span>3 TA O‘YIN</span></div>
+<div class="games">
+<button class="game" onclick="openGame('Shaxmat','♟')"><span class="emoji">♟</span><b>Shaxmat</b><small>Mantiq va strategiya</small></button>
+<button class="game" onclick="openGame('Shashka','⚫')"><span class="emoji">⚫</span><b>Shashka</b><small>Reja tuz va yut</small></button>
+<button class="game" onclick="openGame('Durak','🂡')"><span class="emoji">🂡</span><b>Durak</b><small>Karta o‘yini</small></button>
+<button class="game" onclick="openGame('Do‘st bilan o‘yin','🤝')"><span class="emoji">🤝</span><b>Do‘st bilan</b><small>Taklif havolasi — keyingi bosqich</small></button>
+</div>
+<div class="section"><h2>Platforma</h2><span>GRAND CLUB</span></div>
+<div class="actions"><button class="action" onclick="showInfo('Premium','Premium obuna hozircha demo rejimida. To‘lov integratsiyasi keyingi bosqichda ulanadi.')">👑 Premium</button><button class="action" onclick="showInfo('Reyting','Reyting va o‘yin statistikasi server ulangandan keyin ishlaydi.')">🏆 Reyting</button><button class="action" onclick="showInfo('Profil','Telegram profilingizni avtomatik olish va taxallus tanlash keyingi bosqichda ulanadi.')">👤 Profil</button><button class="action" onclick="showInfo('Yordam','Yordam bo‘limi tez orada qo‘shiladi.')">❔ Yordam</button></div>
+<div class="note">Bu — dastlabki interfeys maketi. Hozircha haqiqiy o‘yin, raqib qidirish, obuna va to‘lovlar ulanmagan.</div>
+</section>
+<section id="game" class="screen">
+<button class="back" onclick="goHome()">← Bosh sahifa</button><div class="hero"><div class="kicker">GRAND PLAY ARENA</div><h1 id="gameTitle">Shaxmat</h1><p id="gameDesc">O‘yin rejimini tanlang.</p></div>
+<div class="card"><b>O‘yin rejimi</b><button class="wide" onclick="showInfo('Tasodifiy raqib','Jonli raqib qidirish server va matchmaking ulangach ishlaydi.')">Tasodifiy raqib</button><button class="action" style="width:100%;margin-top:10px" onclick="showInfo('Do‘stni taklif qilish','Taklif havolasi multiplayer server ulangach yaratiladi.')">Do‘stni taklif qilish</button><button class="action" style="width:100%;margin-top:10px" onclick="showInfo('Kompyuterga qarshi','Kompyuter raqibi va yurish qoidalari keyingi dasturlash bosqichida qo‘shiladi.')">Kompyuterga qarshi</button></div>
+</section>
+</main>
+<script>
+const tg=window.Telegram?.WebApp;
+if(tg){tg.ready();tg.expand();try{const u=tg.initDataUnsafe?.user;if(u){document.getElementById('playerName').textContent=u.first_name||'O‘yinchi'}}catch(e){}}
+function openGame(name,icon){document.getElementById('gameTitle').textContent=icon+' '+name;document.getElementById('gameDesc').textContent=name+' uchun o‘yin rejimini tanlang.';document.getElementById('home').classList.remove('active');document.getElementById('game').classList.add('active')}
+function goHome(){document.getElementById('game').classList.remove('active');document.getElementById('home').classList.add('active')}
+function showInfo(title,msg){if(tg?.showPopup){tg.showPopup({title,message:msg,buttons:[{type:'ok'}]})}else{alert(title+'\\n\\n'+msg)}}
+</script></body></html>
